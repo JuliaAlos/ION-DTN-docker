@@ -24,12 +24,31 @@ Docker image and set up to test ION-DTN software
     ```
 
 ## Com crear DOCKER IMAGE
-1. Crear i edita `Dockerfile`
+1. Crear i edita `Dockerfile` en la carpeta `ion-image/`
 2. Crear imatge 
     ```bash
     sudo docker build -t ion-image .
     ```
-3. Run 
+3. Corre imatge (Per comprobar correcte instalacio)
     ```bash
-    sudo docker run -d -p 80:80 ion-image:latest
+    sudo docker run -d ion-image:latest
     ```
+4. Imatges creades
+    ```bash
+    sudo docker images
+    ```
+5. Accedir terminal imatge
+    ```bash
+    sudo docker run -it ion-image:latest /bin/bash
+    ```
+
+## Run Nodes test
+1. Navega a la carpeta `ION-DTN-docker/test/`
+    ```bash
+    sudo docker-compose -f test_network.yaml up
+    ```
+
+network
+    docker network ls
+containers
+    docker ps

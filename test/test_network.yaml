@@ -5,13 +5,13 @@ services:
     container_name: ion_node1
     hostname: ion_node1
     image: ion-image:latest
-    working_dir: /home/ion-interface
+    working_dir: /ION-DTN/ion-interface
     environment:
-    - ION_HOME=/home/ION-DTN-TEST
+    - ION_HOME=/ION-DTN
     - PYION_BP_VERSION=BPv7
     volumes:
-    - /home/julia/ION-DTN-docker:/home/ion-interface
-    - /home/julia/ION-DTN-docker/test/nodes/1:/home/ion-interface/test/nodes/1
+    - /home/julia/ION-DTN-docker:/ION-DTN/ion-interface
+    - /home/julia/ION-DTN-docker/test/nodes/1:/ION-DTN/ion-interface/test/nodes/1
     networks:
       ion_net:
         ipv4_address: 192.168.0.101
@@ -20,6 +20,7 @@ services:
     tty: true
     command: >-
       bash -c "
+       chmod -R +x .
        sleep 4
        echo 'hello 1'
        sleep 120
@@ -29,13 +30,13 @@ services:
     container_name: ion_node2
     hostname: ion_node2
     image: ion-image:latest
-    working_dir: /home/ion-interface
+    working_dir: /ION-DTN/ion-interface
     environment:
-    - ION_HOME=/home/ION-DTN-TEST
+    - ION_HOME=/ION-DTN
     - PYION_BP_VERSION=BPv7
     volumes:
-    - /home/julia/ION-DTN-docker:/home/ion-interface
-    - /home/julia/ION-DTN-docker/test/nodes/2:/home/ion-interface/test/nodes/2
+    - /home/julia/ION-DTN-docker:/ION-DTN/ion-interface
+    - /home/julia/ION-DTN-docker/test/nodes/2:/ION-DTN/ion-interface/test/nodes/2
     networks:
       ion_net:
         ipv4_address: 192.168.0.102

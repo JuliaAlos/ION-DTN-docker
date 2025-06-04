@@ -6,11 +6,14 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Clone the ION-DTN repository
-RUN git clone https://github.com/JuliaAlos/ION-DTN-test.git
+RUN git clone https://github.com/nasa-jpl/ION-DTN.git
+
+# Copy the cloned repository into the image
+# COPY ../../ION-DTN /ION-DTN
 
 # Build and install ION-DTN
-RUN cd ION-DTN && \
-    autoreconf -fi && \
+WORKDIR /ION-DTN
+RUN autoreconf -fi && \
     ./configure && \
     make && \
     make install
