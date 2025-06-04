@@ -1,0 +1,133 @@
+#!/bin/bash
+
+./cleanup
+sleep 1
+echo "Starting ION..."
+export ION_NODE_LIST_DIR=$PWD
+rm -f ./ion_nodes
+RETVAL=0
+
+# Start nodes.
+echo "Starting Node $1"
+cd "node$1"
+./node1
+
+echo "Starting Node 2"
+cd ../node2
+./node2
+
+echo "Starting Node 3"
+cd ../node3
+./node3
+
+echo "Starting Node 4"
+cd ../node4
+./node4
+
+echo "Starting Node 5"
+cd ../node5
+./node5
+
+# give the buffer time to clear
+sleep 10
+echo "Ready to go"
+
+
+
+./cleanup
+sleep 1
+echo "Starting ION..."
+
+# Define node list directory
+export ION_NODE_LIST_DIR="$PWD"
+
+# Define function to start an ION node
+function startNode() {
+
+    # Go to this node's folder
+    cd "nodes/$1"
+
+	# Clear files
+	if [ -f "ion.log" ]
+	then
+		rm ion.log
+	fi
+	if [ -f "node.stdout" ]
+	then
+		rm "node.stdout"
+	fi
+
+    # Touch the file to avoid error
+    touch node.stdout
+	touch ion.log
+
+    # Ensure that scripts are executable
+    chmod +x ionstart
+    chmod +x ionstop
+
+    # Start ION and direct output to log file
+    ./ionstart >& node.stdout
+
+    # Check that ION has started correctly
+    if [ $? -ne 0 ]
+    then
+        echo "Node $1 not started: Aborting Test"
+	    exit 1
+    fi
+
+    # ======================================================================================
+    # === DEFINE ENDPOINTS USED BY UTILITY SERVICES
+    # ======================================================================================
+
+    # Attach the utility to respond to a ping at endpoint ipn:x.100
+    bpecho ipn:"$1".1 &
+
+    # Attach the utility to receive a file at endpoint ipn:x.101
+    bprecvfile ipn:"$1".2 &
+
+    # Attach the utility to get bundles from bpsource at endpoint ipn:x.102
+    #bpsink ipn:"$1".102 &
+
+    # ======================================================================================
+    # === DEFINE ENDPOINTS FOR UTILITY SERVICES
+    # ======================================================================================
+
+    # Notify success
+    echo "Node $1 succesfully started!"
+}
+
+# If no parameters where passed, then look at the folder within ./nodes.
+# There needs to be one folder per node.
+if [ $# -eq 0 ]
+then
+	# Clean all ION processes
+	./cleanup
+
+	# Get all folders with ION nodes
+	folders=$(ls -l nodes | egrep ^d | awk -F" " '{print $9}')
+else
+	folders=$@
+fi
+
+# Initialize variables
+i=0
+
+# Start the node defined in each folder.
+echo "Starting all ION nodes..."
+for folder in $folders
+    do
+        startNode $folder &
+        sleep 0.035
+
+        pids[$i]=$!
+        nodes[$i]=$folder
+
+        i=$(expr $i + 1)
+    done
+
+# Wait a little bit so that each node is started
+arrLength=${#nodes[@]}
+for i in $(seq 0 $(expr $arrLength - 1))
+do
+    wait "${pids[$i]}"
+done

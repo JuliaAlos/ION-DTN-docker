@@ -1,0 +1,23 @@
+1
+a scheme ipn 'ipnfw' 'ipnadminep'
+a endpoint ipn:1.0 x
+a endpoint ipn:1.1 q
+a endpoint ipn:1.2 x
+a endpoint ipn:1.64 x
+a endpoint ipn:1.65 x
+a protocol udp 1400 100
+a induct udp 192.168.0.101:1112 udpcli
+a induct udp 192.168.0.101:1113 udpcli
+a outduct udp 192.168.0.102:2111 udpclo
+a outduct udp 192.168.0.103:3111 udpclo
+a plan ipn:2.0
+a planduct ipn:2.0 udp 192.168.0.102:2111
+a plan ipn:3.0
+a planduct ipn:3.0 udp 192.168.0.103:3111
+a plan ipn:4.0
+a planduct ipn:2.0 udp 192.168.0.102:2111
+a planduct ipn:3.0 udp 192.168.0.103:3111
+a plan ipn:5.0
+a planduct ipn:2.0 udp 192.168.0.102:2111
+a planduct ipn:3.0 udp 192.168.0.103:3111
+s

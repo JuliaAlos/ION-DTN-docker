@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "Cleaning up old ION..."
+killm
+
+# Remove folder with ion data
+rm -f ion_nodes 
+
+# Delete temporary files from folders
+ls -l | egrep ^d | awk -F" " '{print $9}' | while read folder
+    do
+    rm -f "$folder"/ion.log "$folder"/*.stdout "$folder"/testfile* "$folder"/ltpblock.*
+    done

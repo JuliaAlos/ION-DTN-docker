@@ -1,0 +1,12 @@
+#!/bin/bash
+
+ionadmin	node.ionrc
+ionadmin	../global.ionrc &
+ionsecadmin	bench.ionsecrc &
+bpadmin		node.bprc &
+
+"$ION_HOME/system_up" -i "p 30" -b "p 30"
+if [ $? -ne 2 ]
+then
+   exit 1
+fi
