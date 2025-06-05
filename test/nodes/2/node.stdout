@@ -1,0 +1,25 @@
+[i] admin pgm using SDR parm overrides from bench.ionconfig.
+wmKey:           0
+wmSize:          50000000
+wmAddress:       0
+sdrName:        ''
+sdrWmSize:       0
+configFlags:     1
+heapWords:       20000000
+heapKey:         -1
+logSize:         0
+logKey:          -1
+pathName:       '/tmp'
+Initializing semaphores to use: Posix Named Semaphores - max : 2048
+Stopping ionadmin.
+Stopping ionadmin.
+Now checking ion
+Stopping ionsecadmin.
+Stopping bpadmin.
+: ION system is started
+Stopping ionadmin.
+Now checking bp
+: BP agent is started
+Stopping bpadmin.
+
+ION system started script completed.

@@ -20,10 +20,9 @@ services:
     tty: true
     command: >-
       bash -c "
+       cd test
        chmod -R +x .
-       sleep 4
-       echo 'hello 1'
-       sleep 120
+       ./ionstart 1
        tail
       "
   node2:
@@ -46,8 +45,9 @@ services:
     command: >-
       bash -c "
        sleep 4
-       echo 'hello 2'
-       sleep 120
+       cd test
+       chmod -R +x .
+       ./ionstart 2
        tail
       "
 networks:
