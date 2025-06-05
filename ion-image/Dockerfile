@@ -1,18 +1,32 @@
-FROM ubuntu:22.04  
- 
+FROM ubuntu:22.04
+
+# Set non-interactive mode for apt
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && \
-    apt-get install -y git build-essential autoconf automake libtool && \
+    apt-get install -y apt-utils && \
+    echo "wireshark-common wireshark-common/install-setuid boolean true" | debconf-set-selections && \
+    apt-get install -y git build-essential autoconf automake libtool wireshark tshark \
+    qtbase5-dev qtchooser qtbase5-dev-tools qt5-qmake && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Clone the ION-DTN repository
-RUN git clone https://github.com/nasa-jpl/ION-DTN.git
+# Set the setuid bit on dumpcap
+RUN chmod +s /usr/bin/dumpcap
 
-# Copy the cloned repository into the image
-# COPY ../../ION-DTN /ION-DTN
+# Create the wireshark group if it doesn't exist and add the user to it
+RUN if ! getent group wireshark; then groupadd -g 1001 wireshark; fi && \
+    useradd -ms /bin/bash -u 1001 -G wireshark ion-node
+
+# Clone the ION-DTN repository
+RUN git clone https://github.com/JuliaAlos/ION-DTN-test.git
 
 # Build and install ION-DTN
-WORKDIR /ION-DTN
+WORKDIR /ION-DTN-test
+
+# Create the m4 directory
+RUN mkdir -p m4
+
 RUN autoreconf -fi && \
     ./configure && \
     make && \
@@ -30,6 +44,9 @@ RUN git clone https://github.com/JuliaAlos/ION-DTN-docker.git
 RUN \
     mv ION-DTN-docker/test ion-interface/ && \
     rm -rf ION-DTN-docker
+
+# # Switch to the ion-node
+# USER ion-node
 
 # Define default command.
 CMD ["tail", "-f", "/dev/null"]

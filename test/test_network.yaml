@@ -9,13 +9,18 @@ services:
     environment:
     - ION_HOME=/ION-DTN
     - PYION_BP_VERSION=BPv7
+    - DISPLAY=${DISPLAY}
     volumes:
     - /home/julia/ION-DTN-docker:/ION-DTN/ion-interface
     - /home/julia/ION-DTN-docker/test/nodes/1:/ION-DTN/ion-interface/test/nodes/1
+    - /tmp/.X11-unix:/tmp/.X11-unix
     networks:
       ion_net:
         ipv4_address: 192.168.0.101
     privileged: true
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
     stdin_open: true
     tty: true
     command: >-
@@ -23,6 +28,7 @@ services:
        cd test
        chmod -R +x .
        ./ionstart 1
+       tshark -i any -w /ION-DTN/ion-interface/test/nodes/1/capture.pcap &
        tail
       "
   node2:
@@ -33,21 +39,120 @@ services:
     environment:
     - ION_HOME=/ION-DTN
     - PYION_BP_VERSION=BPv7
+    - DISPLAY=${DISPLAY}
     volumes:
     - /home/julia/ION-DTN-docker:/ION-DTN/ion-interface
     - /home/julia/ION-DTN-docker/test/nodes/2:/ION-DTN/ion-interface/test/nodes/2
+    - /tmp/.X11-unix:/tmp/.X11-unix
     networks:
       ion_net:
         ipv4_address: 192.168.0.102
     privileged: true
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
     stdin_open: true
     tty: true
     command: >-
       bash -c "
-       sleep 4
+       sleep 5
        cd test
        chmod -R +x .
        ./ionstart 2
+       tshark -i any -w /ION-DTN/ion-interface/test/nodes/1/capture.pcap &
+       tail
+      "
+  node3:
+    container_name: ion_node3
+    hostname: ion_node3
+    image: ion-image:latest
+    working_dir: /ION-DTN/ion-interface
+    environment:
+    - ION_HOME=/ION-DTN
+    - PYION_BP_VERSION=BPv7
+    - DISPLAY=${DISPLAY}
+    volumes:
+    - /home/julia/ION-DTN-docker:/ION-DTN/ion-interface
+    - /home/julia/ION-DTN-docker/test/nodes/3:/ION-DTN/ion-interface/test/nodes/3
+    - /tmp/.X11-unix:/tmp/.X11-unix
+    networks:
+      ion_net:
+        ipv4_address: 192.168.0.103
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    stdin_open: true
+    tty: true
+    command: >-
+      bash -c "
+       sleep 10
+       cd test
+       chmod -R +x .
+       ./ionstart 3
+       tshark -i any -w /ION-DTN/ion-interface/test/nodes/1/capture.pcap &
+       tail
+      "
+  node4:
+    container_name: ion_node4
+    hostname: ion_node4
+    image: ion-image:latest
+    working_dir: /ION-DTN/ion-interface
+    environment:
+    - ION_HOME=/ION-DTN
+    - PYION_BP_VERSION=BPv7
+    - DISPLAY=${DISPLAY}
+    volumes:
+    - /home/julia/ION-DTN-docker:/ION-DTN/ion-interface
+    - /home/julia/ION-DTN-docker/test/nodes/4:/ION-DTN/ion-interface/test/nodes/4
+    - /tmp/.X11-unix:/tmp/.X11-unix
+    networks:
+      ion_net:
+        ipv4_address: 192.168.0.104
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    stdin_open: true
+    tty: true
+    command: >-
+      bash -c "
+       sleep 15
+       cd test
+       chmod -R +x .
+       ./ionstart 4
+       tshark -i any -w /ION-DTN/ion-interface/test/nodes/1/capture.pcap &
+       tail
+      "
+  node5:
+    container_name: ion_node5
+    hostname: ion_node5
+    image: ion-image:latest
+    working_dir: /ION-DTN/ion-interface
+    environment:
+    - ION_HOME=/ION-DTN
+    - PYION_BP_VERSION=BPv7
+    - DISPLAY=${DISPLAY}
+    volumes:
+    - /home/julia/ION-DTN-docker:/ION-DTN/ion-interface
+    - /home/julia/ION-DTN-docker/test/nodes/5:/ION-DTN/ion-interface/test/nodes/5
+    - /tmp/.X11-unix:/tmp/.X11-unix
+    networks:
+      ion_net:
+        ipv4_address: 192.168.0.105
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    stdin_open: true
+    tty: true
+    command: >-
+      bash -c "
+       sleep 20
+       cd test
+       chmod -R +x .
+       ./ionstart 5
+       tshark -i any -w /ION-DTN/ion-interface/test/nodes/1/capture.pcap &
        tail
       "
 networks:

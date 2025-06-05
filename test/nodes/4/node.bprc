@@ -6,19 +6,19 @@ a endpoint ipn:4.2 x
 a endpoint ipn:4.64 x
 a endpoint ipn:4.65 x
 a protocol udp 1400 100
-a induct udp 127.0.0.1:4112 udpcli
-a induct udp 127.0.0.1:4113 udpcli
-a induct udp 127.0.0.1:4115 udpcli
-a outduct udp 127.0.0.1:2114 udpclo
-a outduct udp 127.0.0.1:3114 udpclo
-a outduct udp 127.0.0.1:5114 udpclo
+a induct udp 192.168.0.104:4112 udpcli
+a induct udp 192.168.0.104:4113 udpcli
+a induct udp 192.168.0.104:4115 udpcli
+a outduct udp 192.168.0.102:2114 udpclo
+a outduct udp 192.168.0.103:3114 udpclo
+a outduct udp 192.168.0.105:5114 udpclo
 a plan ipn:1.0
-a planduct ipn:2.0 udp 127.0.0.1:2114
-a planduct ipn:3.0 udp 127.0.0.1:3114
+a planduct ipn:2.0 udp 192.168.0.102:2114
+a planduct ipn:3.0 udp 192.168.0.103:3114
 a plan ipn:2.0
-a planduct ipn:2.0 udp 127.0.0.1:2114
+a planduct ipn:2.0 udp 192.168.0.102:2114
 a plan ipn:3.0
-a planduct ipn:3.0 udp 127.0.0.1:3114
+a planduct ipn:3.0 udp 192.168.0.103:3114
 a plan ipn:5.0
-a planduct ipn:5.0 udp 127.0.0.1:5114 
+a planduct ipn:5.0 udp 192.168.0.105:5114 
 s

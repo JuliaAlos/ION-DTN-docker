@@ -1,0 +1,33 @@
+[2025/06/05-23:50:35] [i] This node deploys bundle protocol version 7.
+[2025/06/05-23:50:35] [i] Bundle security is enabled.
+[2025/06/05-23:50:35] [i] bprecvfile is running.
+[2025/06/05-23:50:35] [?] Duct is already attached to a plan: 192.168.0.101:1113
+[2025/06/05-23:50:35] [?] Unknown plan, can't attach duct: ipn:4.0
+[2025/06/05-23:50:35] [?] Duct is already attached to a plan: 192.168.0.104:4113
+[2025/06/05-23:50:35] [i] ipnfw is running.
+[2025/06/05-23:50:35] [i] bpclm is running: ipn:1.0
+[2025/06/05-23:50:35] [i] Not configured for multicast; cpsd stopping.
+[2025/06/05-23:50:35] [i] rfxclock is running.
+[2025/06/05-23:50:35] [i] bpclm is running: ipn:2.0
+[2025/06/05-23:50:35] [i] udpclo is running, spec = '192.168.0.104:4113'
+[2025/06/05-23:50:35] [i] bptransit is running.
+[2025/06/05-23:50:35] [i] ipnadminep is running.
+[2025/06/05-23:50:35] [i] No congestion forecast; horizon reached.
+[2025/06/05-23:50:35] [i] ionwarn finished.
+[2025/06/05-23:50:35] [i] udpcli is running, spec=[192.168.0.103:3114].
+[2025/06/05-23:50:35] [i] No congestion forecast; horizon reached.
+[2025/06/05-23:50:35] [i] ionwarn finished.
+[2025/06/05-23:50:35] [i] bpclm is running: ipn:4.0
+[2025/06/05-23:50:35] [i] udpclo is running, spec = '192.168.0.101:1113'
+[2025/06/05-23:50:35] [i] bpclm is running: ipn:5.0
+[2025/06/05-23:50:35] [i] udpcli is running, spec=[192.168.0.103:3111].
+[2025/06/05-23:50:35] [i] bpclock is running.
+[2025/06/05-23:50:36] [x] src from 1970/01/01-00:00:00 to 2025/06/05-23:50:36: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2025/06/05-23:50:36] [x] fwd from 1970/01/01-00:00:00 to 2025/06/05-23:50:36: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2025/06/05-23:50:36] [x] xmt from 1970/01/01-00:00:00 to 2025/06/05-23:50:36: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2025/06/05-23:50:36] [x] rcv from 1970/01/01-00:00:00 to 2025/06/05-23:50:36: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2025/06/05-23:50:36] [x] dlv from 1970/01/01-00:00:00 to 2025/06/05-23:50:36: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2025/06/05-23:50:36] [x] rfw from 1970/01/01-00:00:00 to 2025/06/05-23:50:36: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2025/06/05-23:50:36] [x] exp from 1970/01/01-00:00:00 to 2025/06/05-23:50:36: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2025/06/05-23:50:36] [i] No congestion forecast; horizon reached.
+[2025/06/05-23:50:36] [i] ionwarn finished.

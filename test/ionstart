@@ -32,7 +32,7 @@ function startNode() {
     chmod +x ionstop
 
     # Start ION and direct output to log file
-    ./ionstart >& node.stdout
+    ./ionstart >& node.stdout || { echo "Error starting node $1. Check node.stdout for details."; exit 1; }
 
     # Check that ION has started correctly
     if [ $? -ne 0 ]
@@ -62,38 +62,27 @@ function startNode() {
     echo "Node $1 succesfully started!"
 }
 
-# If no parameters where passed, then look at the folder within ./nodes.
-# There needs to be one folder per node.
-if [ $# -eq 0 ]
-then
-	# Clean all ION processes
-	./cleanup
-
-	# Get all folders with ION nodes
-	folders=$(ls -l nodes | egrep ^d | awk -F" " '{print $9}')
-else
-	folders=$@
+# Check if a parameter was passed
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <node_folder>"
+    exit 1
 fi
 
-# Initialize variables
-i=0
+# Clean all ION processes
+./cleanup
 
-# Start the node defined in each folder.
-echo "Starting all ION nodes..."
-for folder in $folders
-    do
-        startNode $folder &
-        sleep 0.035
+# Get the folder name from the parameter
+folder=$1
 
-        pids[$i]=$!
-        nodes[$i]=$folder
+# Check if the specified folder exists
+if [ ! -d "nodes/$folder" ]; then
+    echo "Error: Node folder 'nodes/$folder' does not exist."
+    exit 1
+fi
 
-        i=$(expr $i + 1)
-    done
+# Start the specified node
+echo "Starting node $folder..."
+startNode $folder
 
-# Wait a little bit so that each node is started
-arrLength=${#nodes[@]}
-for i in $(seq 0 $(expr $arrLength - 1))
-do
-    wait "${pids[$i]}"
-done
+# Wait for the node to start
+wait $!
