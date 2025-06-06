@@ -1,34 +1,33 @@
-[2025/06/05-23:50:45] at line 1880 of bpv7/library/libbpP.c, Can't find BP database.
-[2025/06/05-23:50:45] at line 88 of bpv7/test/bpecho.c, Can't attach to BP.
-[2025/06/05-23:50:45] at line 1880 of bpv7/library/libbpP.c, Can't find BP database.
-[2025/06/05-23:50:45] at line 144 of bpv7/utils/bprecvfile.c, Can't attach to BP.
-[2025/06/05-23:50:45] [i] This node deploys bundle protocol version 7.
-[2025/06/05-23:50:45] [i] Bundle security is enabled.
-[2025/06/05-23:50:45] [?] Unknown plan, can't attach duct: ipn:4.0
-[2025/06/05-23:50:45] [?] Unknown plan, can't attach duct: ipn:4.0
-[2025/06/05-23:50:45] [?] Unknown plan, can't attach duct: ipn:4.0
-[2025/06/05-23:50:45] [i] No congestion forecast; horizon reached.
-[2025/06/05-23:50:45] [i] ionwarn finished.
-[2025/06/05-23:50:45] [i] No congestion forecast; horizon reached.
-[2025/06/05-23:50:45] [i] ionwarn finished.
-[2025/06/05-23:50:45] [i] rfxclock is running.
-[2025/06/05-23:50:45] [i] bpclock is running.
-[2025/06/05-23:50:45] [i] udpclo is running, spec = '192.168.0.104:4115'
-[2025/06/05-23:50:45] [i] bptransit is running.
-[2025/06/05-23:50:45] [i] bpclm is running: ipn:4.0
-[2025/06/05-23:50:45] [i] ipnfw is running.
-[2025/06/05-23:50:45] [i] bpclm is running: ipn:3.0
-[2025/06/05-23:50:45] [i] bpclm is running: ipn:1.0
-[2025/06/05-23:50:45] [i] udpcli is running, spec=[192.168.0.105:5114].
-[2025/06/05-23:50:45] [i] bpclm is running: ipn:2.0
-[2025/06/05-23:50:45] [i] Not configured for multicast; cpsd stopping.
-[2025/06/05-23:50:45] [i] ipnadminep is running.
-[2025/06/05-23:50:46] [x] src from 1970/01/01-00:00:00 to 2025/06/05-23:50:46: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
-[2025/06/05-23:50:46] [x] fwd from 1970/01/01-00:00:00 to 2025/06/05-23:50:46: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
-[2025/06/05-23:50:46] [x] xmt from 1970/01/01-00:00:00 to 2025/06/05-23:50:46: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
-[2025/06/05-23:50:46] [x] rcv from 1970/01/01-00:00:00 to 2025/06/05-23:50:46: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
-[2025/06/05-23:50:46] [x] dlv from 1970/01/01-00:00:00 to 2025/06/05-23:50:46: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
-[2025/06/05-23:50:46] [x] rfw from 1970/01/01-00:00:00 to 2025/06/05-23:50:46: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
-[2025/06/05-23:50:46] [x] exp from 1970/01/01-00:00:00 to 2025/06/05-23:50:46: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
-[2025/06/05-23:50:46] [i] No congestion forecast; horizon reached.
-[2025/06/05-23:50:46] [i] ionwarn finished.
+[2025/06/06-23:53:20] at line 1880 of bpv7/library/libbpP.c, Can't find BP database.
+[2025/06/06-23:53:20] at line 88 of bpv7/test/bpecho.c, Can't attach to BP.
+[2025/06/06-23:53:20] [i] This node deploys bundle protocol version 7.
+[2025/06/06-23:53:20] [i] Bundle security is enabled.
+[2025/06/06-23:53:20] [?] Unknown plan, can't attach duct: ipn:4.0
+[2025/06/06-23:53:20] [?] Unknown plan, can't attach duct: ipn:4.0
+[2025/06/06-23:53:20] [?] Unknown plan, can't attach duct: ipn:4.0
+[2025/06/06-23:53:20] [i] bprecvfile is running.
+[2025/06/06-23:53:21] [i] Not configured for multicast; cpsd stopping.
+[2025/06/06-23:53:22] [i] rfxclock is running.
+[2025/06/06-23:53:22] [i] No congestion forecast; horizon reached.
+[2025/06/06-23:53:22] [i] ionwarn finished.
+[2025/06/06-23:53:22] [i] udpclo is running, spec = '192.168.0.104:4115'
+[2025/06/06-23:53:22] [i] No congestion forecast; horizon reached.
+[2025/06/06-23:53:22] [i] ionwarn finished.
+[2025/06/06-23:53:22] [i] bpclm is running: ipn:3.0
+[2025/06/06-23:53:22] [i] bpclm is running: ipn:2.0
+[2025/06/06-23:53:22] [i] ipnadminep is running.
+[2025/06/06-23:53:22] [i] bpclock is running.
+[2025/06/06-23:53:22] [i] bptransit is running.
+[2025/06/06-23:53:22] [i] ipnfw is running.
+[2025/06/06-23:53:22] [i] udpcli is running, spec=[192.168.0.105:5114].
+[2025/06/06-23:53:22] [i] bpclm is running: ipn:1.0
+[2025/06/06-23:53:22] [i] bpclm is running: ipn:4.0
+[2025/06/06-23:53:23] [x] src from 1970/01/01-00:00:00 to 2025/06/06-23:53:23: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2025/06/06-23:53:23] [x] fwd from 1970/01/01-00:00:00 to 2025/06/06-23:53:23: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2025/06/06-23:53:23] [x] xmt from 1970/01/01-00:00:00 to 2025/06/06-23:53:23: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2025/06/06-23:53:23] [x] rcv from 1970/01/01-00:00:00 to 2025/06/06-23:53:23: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2025/06/06-23:53:23] [x] dlv from 1970/01/01-00:00:00 to 2025/06/06-23:53:23: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2025/06/06-23:53:23] [x] rfw from 1970/01/01-00:00:00 to 2025/06/06-23:53:23: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2025/06/06-23:53:23] [x] exp from 1970/01/01-00:00:00 to 2025/06/06-23:53:23: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2025/06/06-23:53:23] [i] No congestion forecast; horizon reached.
+[2025/06/06-23:53:23] [i] ionwarn finished.

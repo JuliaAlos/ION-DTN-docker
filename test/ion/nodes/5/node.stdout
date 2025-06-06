@@ -12,6 +12,6 @@ logKey:          -1
 pathName:       '/tmp'
 Initializing semaphores to use: Posix Named Semaphores - max : 2048
 Stopping ionadmin.
-Stopping ionsecadmin.
 Stopping ionadmin.
+Stopping ionsecadmin.
 Stopping bpadmin.

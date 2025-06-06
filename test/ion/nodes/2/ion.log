@@ -1,38 +1,6 @@
-[2025/06/05-23:50:30] [i] This node deploys bundle protocol version 7.
-[2025/06/05-23:50:30] [?] Unknown scheme for endpoint URI: ipn:2.1
-[2025/06/05-23:50:30] at line 69 of bpv7/library/libbp.c, Malformed EID. (ipn:2.1)
-[2025/06/05-23:50:30] at line 94 of bpv7/test/bpecho.c, Can't open own endpoint.
-[2025/06/05-23:50:30] [?] Unknown scheme for endpoint URI: ipn:2.2
-[2025/06/05-23:50:30] at line 69 of bpv7/library/libbp.c, Malformed EID. (ipn:2.2)
-[2025/06/05-23:50:30] at line 150 of bpv7/utils/bprecvfile.c, Can't open own endpoint. (ipn:2.2)
-[2025/06/05-23:50:30] [i] Bundle security is enabled.
-[2025/06/05-23:50:30] [?] Duct is already attached to a plan: 192.168.0.101:1112
-[2025/06/05-23:50:30] [?] Unknown plan, can't attach duct: ipn:4.0
-[2025/06/05-23:50:30] [?] Duct is already attached to a plan: 192.168.0.104:4112
-[2025/06/05-23:50:30] [i] Not configured for multicast; cpsd stopping.
-[2025/06/05-23:50:30] [i] No congestion forecast; horizon reached.
-[2025/06/05-23:50:30] [i] ionwarn finished.
-[2025/06/05-23:50:30] [i] No congestion forecast; horizon reached.
-[2025/06/05-23:50:30] [i] ionwarn finished.
-[2025/06/05-23:50:30] [i] rfxclock is running.
-[2025/06/05-23:50:30] [i] udpcli is running, spec=[192.168.0.102:2114].
-[2025/06/05-23:50:30] [i] bpclm is running: ipn:5.0
-[2025/06/05-23:50:30] [i] udpcli is running, spec=[192.168.0.102:2111].
-[2025/06/05-23:50:30] [i] udpclo is running, spec = '192.168.0.101:1112'
-[2025/06/05-23:50:30] [i] bptransit is running.
-[2025/06/05-23:50:30] [i] udpclo is running, spec = '192.168.0.104:4112'
-[2025/06/05-23:50:30] [i] bpclm is running: ipn:3.0
-[2025/06/05-23:50:30] [i] bpclm is running: ipn:4.0
-[2025/06/05-23:50:30] [i] ipnadminep is running.
-[2025/06/05-23:50:30] [i] ipnfw is running.
-[2025/06/05-23:50:30] [i] bpclm is running: ipn:1.0
-[2025/06/05-23:50:30] [i] bpclock is running.
-[2025/06/05-23:50:31] [x] src from 1970/01/01-00:00:00 to 2025/06/05-23:50:31: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
-[2025/06/05-23:50:31] [x] fwd from 1970/01/01-00:00:00 to 2025/06/05-23:50:31: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
-[2025/06/05-23:50:31] [x] xmt from 1970/01/01-00:00:00 to 2025/06/05-23:50:31: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
-[2025/06/05-23:50:31] [x] rcv from 1970/01/01-00:00:00 to 2025/06/05-23:50:31: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
-[2025/06/05-23:50:31] [x] dlv from 1970/01/01-00:00:00 to 2025/06/05-23:50:31: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
-[2025/06/05-23:50:31] [x] rfw from 1970/01/01-00:00:00 to 2025/06/05-23:50:31: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
-[2025/06/05-23:50:31] [x] exp from 1970/01/01-00:00:00 to 2025/06/05-23:50:31: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
-[2025/06/05-23:50:31] [i] No congestion forecast; horizon reached.
-[2025/06/05-23:50:31] [i] ionwarn finished.
+[2025/06/06-23:53:20] [i] This node deploys bundle protocol version 7.
+[2025/06/06-23:53:20] [i] Bundle security is enabled.
+[2025/06/06-23:53:20] [?] Duct is already attached to a plan: 192.168.0.101:1112
+[2025/06/06-23:53:20] [?] Unknown plan, can't attach duct: ipn:4.0
+[2025/06/06-23:53:20] [?] Duct is already attached to a plan: 192.168.0.104:4112
+[2025/06/06-23:53:20] [i] bprecvfile is running.

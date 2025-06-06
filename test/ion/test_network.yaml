@@ -12,7 +12,7 @@ services:
     - DISPLAY=${DISPLAY}
     volumes:
     - /home/julia/ION-DTN-docker:/ION-DTN/ion-interface
-    - /home/julia/ION-DTN-docker/test/ion/nodes/1:/ION-DTN/ion-interface/test/nodes/1
+    - /home/julia/ION-DTN-docker/test/ion/nodes/1:/ION-DTN/ion-interface/nodes/1
     - /tmp/.X11-unix:/tmp/.X11-unix
     networks:
       ion_net:
@@ -25,10 +25,10 @@ services:
     tty: true
     command: >-
       bash -c "
-       cd test
-       chmod -R +x .
-       ./ionstart 1
-       tshark -i any -w /ION-DTN/ion-interface/test/nodes/1/capture.pcap &
+       cd test/ion
+       chmod -R +x . &&
+       ./ionstart 1 &&
+       tshark -i any -w /ION-DTN/ion-interface/test/ion/nodes/1/capture.pcap &
        tail
       "
   node2:
@@ -42,7 +42,7 @@ services:
     - DISPLAY=${DISPLAY}
     volumes:
     - /home/julia/ION-DTN-docker:/ION-DTN/ion-interface
-    - /home/julia/ION-DTN-docker/test/ion/nodes/2:/ION-DTN/ion-interface/test/nodes/2
+    - /home/julia/ION-DTN-docker/test/ion/nodes/2:/ION-DTN/ion-interface/nodes/2
     - /tmp/.X11-unix:/tmp/.X11-unix
     networks:
       ion_net:
@@ -55,11 +55,10 @@ services:
     tty: true
     command: >-
       bash -c "
-       sleep 5
-       cd test
-       chmod -R +x .
-       ./ionstart 2
-       tshark -i any -w /ION-DTN/ion-interface/test/nodes/1/capture.pcap &
+       cd test/ion
+       chmod -R +x . &&
+       ./ionstart 2 &&
+       tshark -i any -w /ION-DTN/ion-interface/test/ion/nodes/2/capture.pcap &
        tail
       "
   node3:
@@ -73,7 +72,7 @@ services:
     - DISPLAY=${DISPLAY}
     volumes:
     - /home/julia/ION-DTN-docker:/ION-DTN/ion-interface
-    - /home/julia/ION-DTN-docker/test/ion/nodes/3:/ION-DTN/ion-interface/test/nodes/3
+    - /home/julia/ION-DTN-docker/test/ion/nodes/3:/ION-DTN/ion-interface/nodes/3
     - /tmp/.X11-unix:/tmp/.X11-unix
     networks:
       ion_net:
@@ -86,11 +85,10 @@ services:
     tty: true
     command: >-
       bash -c "
-       sleep 10
-       cd test
-       chmod -R +x .
-       ./ionstart 3
-       tshark -i any -w /ION-DTN/ion-interface/test/nodes/1/capture.pcap &
+       cd test/ion
+       chmod -R +x . &&
+       ./ionstart 3 &&
+       tshark -i any -w /ION-DTN/ion-interface/test/ion/nodes/3/capture.pcap &
        tail
       "
   node4:
@@ -104,7 +102,7 @@ services:
     - DISPLAY=${DISPLAY}
     volumes:
     - /home/julia/ION-DTN-docker:/ION-DTN/ion-interface
-    - /home/julia/ION-DTN-docker/test/ion/nodes/4:/ION-DTN/ion-interface/test/nodes/4
+    - /home/julia/ION-DTN-docker/test/ion/nodes/4:/ION-DTN/ion-interface/nodes/4
     - /tmp/.X11-unix:/tmp/.X11-unix
     networks:
       ion_net:
@@ -117,11 +115,10 @@ services:
     tty: true
     command: >-
       bash -c "
-       sleep 15
-       cd test
-       chmod -R +x .
-       ./ionstart 4
-       tshark -i any -w /ION-DTN/ion-interface/test/nodes/1/capture.pcap &
+       cd test/ion
+       chmod -R +x . &&
+       ./ionstart 4 &&
+       tshark -i any -w /ION-DTN/ion-interface/test/ion/nodes/4/capture.pcap &
        tail
       "
   node5:
@@ -135,7 +132,7 @@ services:
     - DISPLAY=${DISPLAY}
     volumes:
     - /home/julia/ION-DTN-docker:/ION-DTN/ion-interface
-    - /home/julia/ION-DTN-docker/test/ion/nodes/5:/ION-DTN/ion-interface/test/nodes/5
+    - /home/julia/ION-DTN-docker/test/ion/nodes/5:/ION-DTN/ion-interface/nodes/5
     - /tmp/.X11-unix:/tmp/.X11-unix
     networks:
       ion_net:
@@ -148,11 +145,10 @@ services:
     tty: true
     command: >-
       bash -c "
-       sleep 20
-       cd test
-       chmod -R +x .
-       ./ionstart 5
-       tshark -i any -w /ION-DTN/ion-interface/test/nodes/1/capture.pcap &
+       cd test/ion
+       chmod -R +x . &&
+       ./ionstart 5 &&
+       tshark -i any -w /ION-DTN/ion-interface/test/ion/nodes/5/capture.pcap &
        tail
       "
 networks:

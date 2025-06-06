@@ -15,3 +15,64 @@ Stopping ionadmin.
 Stopping ionsecadmin.
 Stopping ionadmin.
 Stopping bpadmin.
+at line 600 of ici/library/ion.c, No node has been initialized in this directory. (/ION-DTN/ion-interface/test/ion/nodes/1)
+at line 986 of ici/library/ion.c, Failed checking node list parms.
+at line 653 of ici/utils/ionwarn.c, ionwarn can't attach to ION.
+at line 600 of ici/library/ion.c, No node has been initialized in this directory. (/ION-DTN/ion-interface/test/ion/nodes/1)
+at line 986 of ici/library/ion.c, Failed checking node list parms.
+at line 1865 of bpv7/library/libbpP.c, BP can't attach to ION.
+at line 446 of bpv7/daemon/bpclm.c, bpclm can't attach to BP.
+at line 600 of ici/library/ion.c, No node has been initialized in this directory. (/ION-DTN/ion-interface/test/ion/nodes/1)
+at line 986 of ici/library/ion.c, Failed checking node list parms.
+at line 455 of ici/daemon/rfxclock.c, rfxclock can't attach to ION.
+at line 600 of ici/library/ion.c, No node has been initialized in this directory. (/ION-DTN/ion-interface/test/ion/nodes/1)
+at line 986 of ici/library/ion.c, Failed checking node list parms.
+at line 1865 of bpv7/library/libbpP.c, BP can't attach to ION.
+at line 1240 of bpv7/ipn/ipnfw.c, ipnfw can't attach to BP.
+at line 600 of ici/library/ion.c, No node has been initialized in this directory. (/ION-DTN/ion-interface/test/ion/nodes/1)
+at line 986 of ici/library/ion.c, Failed checking node list parms.
+at line 1865 of bpv7/library/libbpP.c, BP can't attach to ION.
+at line 403 of bpv7/daemon/cpsd.c, cpsd can't attach to BP.
+at line 600 of ici/library/ion.c, No node has been initialized in this directory. (/ION-DTN/ion-interface/test/ion/nodes/1)
+at line 986 of ici/library/ion.c, Failed checking node list parms.
+at line 1865 of bpv7/library/libbpP.c, BP can't attach to ION.
+at line 152 of bpv7/udp/udpcli.c, udpcli can't attach to BP.
+at line 600 of ici/library/ion.c, No node has been initialized in this directory. (/ION-DTN/ion-interface/test/ion/nodes/1)
+at line 986 of ici/library/ion.c, Failed checking node list parms.
+at line 653 of ici/utils/ionwarn.c, ionwarn can't attach to ION.
+at line 600 of ici/library/ion.c, No node has been initialized in this directory. (/ION-DTN/ion-interface/test/ion/nodes/1)
+at line 986 of ici/library/ion.c, Failed checking node list parms.
+at line 1865 of bpv7/library/libbpP.c, BP can't attach to ION.
+at line 446 of bpv7/daemon/bpclm.c, bpclm can't attach to BP.
+at line 600 of ici/library/ion.c, No node has been initialized in this directory. (/ION-DTN/ion-interface/test/ion/nodes/1)
+at line 986 of ici/library/ion.c, Failed checking node list parms.
+at line 1865 of bpv7/library/libbpP.c, BP can't attach to ION.
+at line 446 of bpv7/daemon/bpclm.c, bpclm can't attach to BP.
+at line 600 of ici/library/ion.c, No node has been initialized in this directory. (/ION-DTN/ion-interface/test/ion/nodes/1)
+at line 986 of ici/library/ion.c, Failed checking node list parms.
+at line 1865 of bpv7/library/libbpP.c, BP can't attach to ION.
+at line 534 of bpv7/daemon/bpclock.c, bpclock can't attach to BP.
+at line 600 of ici/library/ion.c, No node has been initialized in this directory. (/ION-DTN/ion-interface/test/ion/nodes/1)
+at line 986 of ici/library/ion.c, Failed checking node list parms.
+at line 1865 of bpv7/library/libbpP.c, BP can't attach to ION.
+at line 123 of bpv7/udp/udpclo.c, udpclo can't attach to BP.
+at line 600 of ici/library/ion.c, No node has been initialized in this directory. (/ION-DTN/ion-interface/test/ion/nodes/1)
+at line 986 of ici/library/ion.c, Failed checking node list parms.
+at line 1865 of bpv7/library/libbpP.c, BP can't attach to ION.
+at line 446 of bpv7/daemon/bpclm.c, bpclm can't attach to BP.
+at line 600 of ici/library/ion.c, No node has been initialized in this directory. (/ION-DTN/ion-interface/test/ion/nodes/1)
+at line 986 of ici/library/ion.c, Failed checking node list parms.
+at line 1865 of bpv7/library/libbpP.c, BP can't attach to ION.
+at line 150 of bpv7/ipn/ipnadminep.c, ipnadminep can't attach to BP.
+at line 600 of ici/library/ion.c, No node has been initialized in this directory. (/ION-DTN/ion-interface/test/ion/nodes/1)
+at line 986 of ici/library/ion.c, Failed checking node list parms.
+at line 1865 of bpv7/library/libbpP.c, BP can't attach to ION.
+at line 123 of bpv7/udp/udpclo.c, udpclo can't attach to BP.
+at line 600 of ici/library/ion.c, No node has been initialized in this directory. (/ION-DTN/ion-interface/test/ion/nodes/1)
+at line 986 of ici/library/ion.c, Failed checking node list parms.
+at line 1865 of bpv7/library/libbpP.c, BP can't attach to ION.
+at line 152 of bpv7/udp/udpcli.c, udpcli can't attach to BP.
+at line 600 of ici/library/ion.c, No node has been initialized in this directory. (/ION-DTN/ion-interface/test/ion/nodes/1)
+at line 986 of ici/library/ion.c, Failed checking node list parms.
+at line 1865 of bpv7/library/libbpP.c, BP can't attach to ION.
+at line 121 of bpv7/daemon/bptransit.c, bptransit can't attach to BP.

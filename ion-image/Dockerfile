@@ -42,7 +42,7 @@ ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 RUN git clone https://github.com/JuliaAlos/ION-DTN-docker.git
 
 RUN \
-    mv ION-DTN-docker/test ion-interface/ && \
+    mv ION-DTN-docker/test/ion ion-interface/ && \
     rm -rf ION-DTN-docker
 
 # Define default command.
