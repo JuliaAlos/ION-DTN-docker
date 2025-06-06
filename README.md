@@ -61,6 +61,7 @@ Docker image and set up to test ION-DTN software
 3. View images
     ```bash
     sudo docker images
+    sudo docker rmi -f <Image ID> # To delete old image
     ```
 4. Down volumes
     ```bash

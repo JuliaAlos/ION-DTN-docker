@@ -1,0 +1,69 @@
+---
+version: '3'
+services:
+  node1:
+    container_name: ros_node1
+    hostname: ros_node1
+    image: ros2-image:latest
+#    working_dir: /ION-DTN/ion-interface
+    environment:
+#    - ION_HOME=/ION-DTN
+#    - PYION_BP_VERSION=BPv7
+    - DISPLAY=${DISPLAY}
+    volumes:
+#    - /home/julia/ION-DTN-docker:/ION-DTN/ion-interface
+#    - /home/julia/ION-DTN-docker/test/ion/nodes/1:/ION-DTN/ion-interface/test/nodes/1
+    - /tmp/.X11-unix:/tmp/.X11-unix
+    networks:
+      ros_net:
+        ipv4_address: 10.0.0.101
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    stdin_open: true
+    tty: true
+    command: >-
+      bash -c "
+        echo 'source /opt/ros/jazzy/setup.bash' >> ~/.bashrc &&
+        tshark -i any -w /capture.pcap &
+        tail -f /dev/null
+      "
+  node2:
+    container_name: ros_node2
+    hostname: ros_node2
+    image: ros2-image:latest
+    working_dir: /ION-DTN/ion-interface
+    environment:
+    # - ION_HOME=/ION-DTN
+    # - PYION_BP_VERSION=BPv7
+    - DISPLAY=${DISPLAY}
+    volumes:
+    # - /home/julia/ION-DTN-docker:/ION-DTN/ion-interface
+    # - /home/julia/ION-DTN-docker/test/ion/nodes/2:/ION-DTN/ion-interface/test/nodes/2
+    - /tmp/.X11-unix:/tmp/.X11-unix
+    networks:
+      ros_net:
+        ipv4_address: 10.0.0.102
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    stdin_open: true
+    tty: true
+    command: >-
+    command: >-
+      bash -c "
+        echo 'source /opt/ros/jazzy/setup.bash' >> ~/.bashrc &&
+        tshark -i any -w /capture.pcap &
+        tail -f /dev/null
+      "
+networks:
+  ros_net:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: 'false'
+    ipam:
+      config:
+      - subnet: 10.0.0.0/16
+      driver: default

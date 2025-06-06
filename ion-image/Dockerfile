@@ -45,8 +45,5 @@ RUN \
     mv ION-DTN-docker/test ion-interface/ && \
     rm -rf ION-DTN-docker
 
-# # Switch to the ion-node
-# USER ion-node
-
 # Define default command.
 CMD ["tail", "-f", "/dev/null"]
